@@ -1,0 +1,15 @@
+[package]
+name = "fledge"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bootimage = "0.10.3"
+cargo-binutils = "0.3.6"
+
+[package.metadata.bootimage]
+build-command = ["build"]
+
+run-command = [
+  "qemu-system-x86_64","-drive","format=raw,file={}"
+]
