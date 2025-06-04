@@ -13,3 +13,13 @@ build-command = ["build"]
 run-command = [
   "qemu-system-x86_64","-drive","format=raw,file={}"
 ]
+
+[build]
+target = "fledge.json"
+
+[unstable]
+build-std = ["core","compiler_buildins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
